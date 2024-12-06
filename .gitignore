@@ -398,3 +398,14 @@ Temporary Items
 dist
 .webpack
 .serverless/**/*.zip
+
+cdk/*.js
+cdk/!jest.config.js
+cdk/*.d.ts
+cdk/node_modules
+cdk/lib/*.js
+cdk/bin/*.js
+
+# CDK asset staging directory
+cdk/.cdk.staging
+cdk/cdk.out
