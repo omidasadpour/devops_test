@@ -1,0 +1,18 @@
+---
+  name: "CDK Diff Test"
+  on:
+    pull_request:
+      branches: ["main"]
+      paths:
+        - "cdk/**"
+        - "package.json"
+        - "package-lock.json"
+        - "Dockerfile"
+        - "src/**"
+        - ".github/workflows/cdk-*.yaml"
+  jobs:
+    call-cdk-workflow:
+      uses: ./.github/workflows/cdk-workflow.yaml
+      with:
+        iam-role: arn:aws:iam::135808930069:role/cdk-diff
+        cdk-stack: test
